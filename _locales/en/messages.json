@@ -1,0 +1,11 @@
+{
+	"extension_name": {
+		"message": "Chrome Bookmarks Tagging Tool",
+		"description": "Extension Name"
+	},
+
+	"extension_description": {
+		"message": "Extension for tagging Bookmarks",
+		"description": ""
+	}
+}

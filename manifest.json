@@ -1,0 +1,38 @@
+{
+	"name": "__MSG_extension_name__",
+	"version": "0.1",
+	"manifest_version": 2,
+
+	"description": "__MSG_extension_description__",
+	"icons": {
+		"16": "icons/extension_icon_19x19.png",
+		"32": "icons/extension_icon_32x32.png",
+		"48": "icons/extension_icon_48x48.png",
+		"64": "icons/extension_icon_64x64.png",
+		"128": "icons/extension_icon_128x128.png"
+	},
+
+	"default_locale": "en",
+	
+	"page_action": {
+		"default_icon": "icons/extension_icon_19x19.png",
+		"default_title": "Tag Bookmark",
+		"default_popup": "pageAction/page_action.html"
+	},
+
+	"background": {
+		"scripts": ["background/background.js"]
+	},
+
+	"omnibox": {
+		"keyword": "#"
+	},
+
+	"options_page": "options/options.html",
+	
+	"permissions": [
+		"tabs",
+		"bookmarks",
+		"https://*/*"
+	]
+}
