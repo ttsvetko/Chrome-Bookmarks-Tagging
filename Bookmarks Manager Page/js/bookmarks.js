@@ -8,9 +8,16 @@ module.controller('BookmarksManagerController', function ($scope) {
 	$scope.JSbookmarksManagerTitle = chrome.i18n.getMessage('JSbookmarksManagerTitle');
 	$scope.JSsearch = chrome.i18n.getMessage("JSsearch");
 
+	$scope.selectedItem;
+
 	//Listeners
 	$scope.click = function() {
-		switch (this.child.command) {
+		var command = this.child.command;
+		if (!$scope.selectedItem && command !== "import" && command !== "export") {
+			return
+		}
+
+		switch (command) {
 			case "import": chrome.bookmarks.import();
 							break;
 			case "export": chrome.bookmarks.export();
@@ -56,11 +63,13 @@ module.controller('BookmarksManagerController', function ($scope) {
 			children: [
 				{
 					value: chrome.i18n.getMessage("JSimport"),
-					command: "import"
+					command: "import",
+					enable: true
 				},
 				{
 					value: chrome.i18n.getMessage("JSexport"),
-					command: "export"
+					command: "export",
+					enable: true
 				}
 			]
 		}

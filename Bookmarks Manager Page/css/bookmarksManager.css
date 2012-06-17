@@ -15,6 +15,15 @@ body {
 	border-radius: 0
 }
 
+.dropdown-menu a[disabled] {
+	color: #CCC;
+}
+
+.dropdown-menu li > a[disabled]:hover {
+	background: #FFF;
+	color: #CCC;
+	cursor: default;
+}
 .breadcrumb {
 	margin-bottom: 0;
 	border-radius: 0;

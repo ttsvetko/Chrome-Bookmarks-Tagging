@@ -25,8 +25,8 @@
 									{{item.value}}
 								</a>
 								<ul class="dropdown-menu" ng-show="item.children">
-									<li ng-repeat="child in item.children" ng-click="click()">
-										<a>{{child.value}}</a>
+									<li ng-repeat="child in item.children" >
+										<a disabled="{{!child.enable || selectedItem}}" ng-click="click()">{{child.value}}</a>
 									</li>
 								</ul>
 							</li>
