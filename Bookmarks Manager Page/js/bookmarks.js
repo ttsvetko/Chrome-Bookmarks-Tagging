@@ -3,12 +3,10 @@
 var module = angular.module('BookmarksManager', []);
 
 /* Controllers */
-module.controller('BookmarksManagerController', function ($scope) {
+module.controller('BookmarksManagerController', function ($scope, $timeout) {
 	//Localization
 	$scope.JSbookmarksManagerTitle = chrome.i18n.getMessage('JSbookmarksManagerTitle');
 	$scope.JSsearch = chrome.i18n.getMessage("JSsearch");
-
-	$scope.selectedItem;
 
 	//Listeners
 	$scope.click = function() {
@@ -63,13 +61,11 @@ module.controller('BookmarksManagerController', function ($scope) {
 			children: [
 				{
 					value: chrome.i18n.getMessage("JSimport"),
-					command: "import",
-					enable: true
+					command: "import"
 				},
 				{
 					value: chrome.i18n.getMessage("JSexport"),
-					command: "export",
-					enable: true
+					command: "export"
 				}
 			]
 		}

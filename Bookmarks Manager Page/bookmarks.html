@@ -26,7 +26,7 @@
 								</a>
 								<ul class="dropdown-menu" ng-show="item.children">
 									<li ng-repeat="child in item.children" >
-										<a disabled="{{!child.enable || selectedItem}}" ng-click="click()">{{child.value}}</a>
+										<a ng-click="click()">{{child.value}}</a>
 									</li>
 								</ul>
 							</li>
@@ -40,9 +40,9 @@
 		</nav>
 	</header>
 	<div class="content">
-
 	</div>
 	<footer>
+		<span>{{selectedItem}}</span>
 		<ul class="breadcrumb">
 			<li ng-repeat="crumb in breadcrumb">
 				<span ng-hide="crumb.url">{{crumb.name}}</span>
