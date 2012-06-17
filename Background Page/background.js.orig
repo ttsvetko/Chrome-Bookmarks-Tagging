@@ -99,6 +99,8 @@
 						self._setPageActionIcon(tabId);
 					}
 				});
+
+				
 			});
 		},
 
