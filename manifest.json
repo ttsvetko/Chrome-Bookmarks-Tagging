@@ -5,30 +5,34 @@
 
 	"description": "__MSG_extension_description__",
 	"icons": {
-		"16": "icons/extension_icon_19x19.png",
-		"32": "icons/extension_icon_32x32.png",
-		"48": "icons/extension_icon_48x48.png",
-		"64": "icons/extension_icon_64x64.png",
-		"128": "icons/extension_icon_128x128.png"
+		"16": "common/icons/extension_icon_page_action.png",
+		"32": "common/icons/extension_icon_page_action.png",
+		"48": "common/icons/extension_icon.png",
+		"64": "common/icons/extension_icon.png",
+		"128": "common/icons/extension_icon.png"
 	},
 
 	"default_locale": "en",
-	
+
+	"chrome_url_overrides" : {
+    	"bookmarks": "Bookmarks Manager Page/bookmarks.html"
+    },
+
 	"page_action": {
-		"default_icon": "icons/extension_icon_19x19.png",
+		"default_icon": "common/icons/extension_icon_page_action.png",
 		"default_title": "Tag Bookmark",
-		"default_popup": "pageAction/page_action.html"
+		"default_popup": "Action Page/page_action.html"
 	},
 
 	"background": {
-		"scripts": ["background/background.js"]
+		"scripts": ["Background Page/background.js"]
 	},
 
 	"omnibox": {
 		"keyword": "#"
 	},
 
-	"options_page": "options/options.html",
+	"options_page": "Options Page/options.html",
 	
 	"permissions": [
 		"tabs",

@@ -1,8 +1,16 @@
 (function (win) {
 	var doc = win.document;
 
-	function TagDialog (tab) {
+	function ActionPage (tab) {
 		this._tab = tab;
+	}
+
+	ActionPage.prototype = {
+		constructor: ActionPage,
+
+		toString: function () {return "TagDialog"},
+
+		
 	}
 
 	chrome.tabs.query({
