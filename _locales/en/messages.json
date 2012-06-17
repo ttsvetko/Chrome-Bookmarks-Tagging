@@ -1,11 +1,81 @@
 {
 	"extension_name": {
-		"message": "Chrome Bookmarks Tagging Tool",
+		"message": "Bookmark Tags",
 		"description": "Extension Name"
 	},
 
 	"extension_description": {
 		"message": "Extension for tagging Bookmarks",
 		"description": ""
+	},
+
+	"JSadd": {
+		"message": "Add",
+		"description": ""
+	},
+
+	"JSaddPage": {
+		"message": "Add Page",
+		"description": ""
+	},
+
+	"JSaddFolder": {
+		"message": "Add Folder",
+		"description": ""
+	},
+
+	"JSbookmarksManagerTitle": {
+		"message": "Bookmarks Manager",
+		"description": "Bookmarks Manager title"
+	},
+
+	"JScopy": {
+		"message": "Copy",
+		"description": ""
+	},
+
+	"JScut": {
+		"message": "Cut",
+		"description": ""
+	},
+
+	"JSdelete": {
+		"message": "Delete",
+		"description": ""
+	},
+
+	"JSexport": {
+		"message": "Export",
+		"description": ""
+	},
+
+	"JSimport": {
+		"message": "Import",
+		"description": ""
+	},
+
+	"JSimport_export": {
+		"message": "Import/Export",
+		"description": ""
+	},
+
+	"JSpaste": {
+		"message": "Paste",
+		"description": ""
+	},
+
+	"JSrename": {
+		"message": "Rename",
+		"description": ""
+	},
+
+	"JSedit": {
+		"message": "Edit",
+		"description": ""
+	},
+
+	"JSsearch": {
+		"message": "Search",
+		"description": "Search string"
 	}
 }
