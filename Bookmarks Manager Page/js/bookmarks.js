@@ -8,6 +8,8 @@ module.controller('BookmarksManagerController', function ($scope, $timeout) {
 	$scope.JSbookmarksManagerTitle = chrome.i18n.getMessage('JSbookmarksManagerTitle');
 	$scope.JSsearch = chrome.i18n.getMessage("JSsearch");
 
+	$scope.selectedItem = false;
+
 	//Listeners
 	$scope.click = function() {
 		var command = this.child.command;
@@ -23,16 +25,28 @@ module.controller('BookmarksManagerController', function ($scope, $timeout) {
 		}
 	}
 
+	$scope.setDisabledMenuItem = function() {
+		var disabled = true;
+
+		if (this.child.enable || $scope.selectedItem) {
+			disabled = false;
+		}
+
+		return disabled;
+	}
+
 	//Menu
 	$scope.menuItems = [
 		{
 			value: chrome.i18n.getMessage("JSadd"),
 			children: [
 				{
-					value: chrome.i18n.getMessage("JSaddPage")
+					value: chrome.i18n.getMessage("JSaddPage"),
+					command: "addPage"
 				},
 				{
-					value: chrome.i18n.getMessage("JSaddFolder")
+					value: chrome.i18n.getMessage("JSaddFolder"),
+					command: "addFolder"
 				}
 			]
 		},
@@ -40,19 +54,24 @@ module.controller('BookmarksManagerController', function ($scope, $timeout) {
 			value: chrome.i18n.getMessage("JSedit"),
 			children: [
 				{
-					value: chrome.i18n.getMessage("JScut")
+					value: chrome.i18n.getMessage("JScut"),
+					command: "cut"
 				},
 				{
-					value: chrome.i18n.getMessage("JScopy")
+					value: chrome.i18n.getMessage("JScopy"),
+					command: "copy"
 				},
 				{
-					value: chrome.i18n.getMessage("JSpaste")
+					value: chrome.i18n.getMessage("JSpaste"),
+					command: "paste"
 				},
 				{
-					value: chrome.i18n.getMessage("JSrename")
+					value: chrome.i18n.getMessage("JSrename"),
+					command: "rename"
 				},
 				{
-					value: chrome.i18n.getMessage("JSdelete")
+					value: chrome.i18n.getMessage("JSdelete"),
+					command: "delete"
 				}
 			]
 		},
@@ -61,11 +80,13 @@ module.controller('BookmarksManagerController', function ($scope, $timeout) {
 			children: [
 				{
 					value: chrome.i18n.getMessage("JSimport"),
-					command: "import"
+					command: "import",
+					enable: true
 				},
 				{
 					value: chrome.i18n.getMessage("JSexport"),
-					command: "export"
+					command: "export",
+					enable: true
 				}
 			]
 		}
